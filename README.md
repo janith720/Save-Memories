@@ -2,14 +2,17 @@
 
 ## Overview
 
-  Save-Memories is a web-based application designed to help users capture and preserve their cherished memories in a digital format. This project allows users to create, edit, delete, and    like memories by providing a user-friendly interface. The application revolves around the concept of creating posts, each representing a specific memory, enriched with details such as      name, title, message, tags, and an associated photo.
+  Save-Memories is a web-based application designed to help users capture and preserve their cherished memories in a digital format. This 
+  project allows users to create, edit, delete, and    like memories by providing a user-friendly interface. The application revolves 
+  around the concept of creating posts, each representing a specific memory, enriched with details such as      name, title, message, 
+  tags, and an associated photo.
 
 ## Features
 
-  1.Creating Memories
-  2.Viewing Memories
-  3.Editing Memories
-  4.Deleting Memories
+  1.Creating Memories\
+  2.Viewing Memories\
+  3.Editing Memories\
+  4.Deleting Memories\
   5.Liking Memories
 
 ## User Interface (Web)
