@@ -8,17 +8,17 @@ export default makeStyles((theme) => ({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    background: '#3F51B5'
+    background: "#3F51B5",
+    boxShadow: "none",
   },
   heading: {
     color: "white",
     padding: "10px",
-    fontWeight: "400"
+    fontWeight: "400",
   },
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down("sm")]: {
     mainContainer: {
-      flexDirection: "column-reverse"
-    }
-  }
-  
+      flexDirection: "column-reverse",
+    },
+  },
 }));

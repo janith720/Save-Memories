@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import useStyles from "./styles";
 import { createPost, updatePost } from "../../actions/posts";
 
-export default function Form({ currentId,setCurrentId }) {
+export default function Form({ currentId, setCurrentId }) {
   const [postData, setPostData] = React.useState({
     creator: "",
     title: "",
@@ -14,40 +14,37 @@ export default function Form({ currentId,setCurrentId }) {
     tags: "",
     selectedFile: "",
   });
-  const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null) 
+  const post = useSelector((state) =>
+    currentId ? state.posts.find((p) => p._id === currentId) : null
+  );
   const classes = useStyles();
 
   const dispatch = useDispatch();
-  
+
   React.useEffect(() => {
-    if(post) setPostData(post)
-    
-  }, [post])
+    if (post) setPostData(post);
+  }, [post]);
 
   // console.log('currentId')
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if(currentId){
+    if (currentId) {
       dispatch(updatePost(currentId, postData));
-      
-    }else{
-
+    } else {
       dispatch(createPost(postData));
     }
-    clear()
-
-    
+    clear();
   };
   const clear = () => {
-    setCurrentId(null)
+    setCurrentId(null);
     setPostData({
       creator: "",
       title: "",
       message: "",
       tags: "",
       selectedFile: "",
-    })
+    });
   };
 
   return (
@@ -58,7 +55,9 @@ export default function Form({ currentId,setCurrentId }) {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">{currentId ? 'Editing' : 'Creating'} a Memory</Typography>
+        <Typography variant="h6">
+          {currentId ? "Edit" : "Create"} your memory
+        </Typography>
         <TextField
           name="creator"
           variant="outlined"
@@ -93,7 +92,9 @@ export default function Form({ currentId,setCurrentId }) {
           label="Tags"
           fullWidth
           value={postData.tags}
-          onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}
+          onChange={(e) =>
+            setPostData({ ...postData, tags: e.target.value.split(",") })
+          }
         />
         <div className={classes.fileInput}>
           <FileBase
@@ -115,6 +116,7 @@ export default function Form({ currentId,setCurrentId }) {
           Submit
         </Button>
         <Button
+          className={classes.buttonSubmit}
           variant="contained"
           color="secondary"
           size="small"
